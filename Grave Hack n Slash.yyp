@@ -135,6 +135,14 @@
             }
         },
         {
+            "Key": "5ffff6e2-08df-4836-8a5c-62c2ef47ff88",
+            "Value": {
+                "id": "8ca0d092-65fc-47d8-a20c-19edc9940873",
+                "resourcePath": "views\\5ffff6e2-08df-4836-8a5c-62c2ef47ff88.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "6020e804-2544-49f9-8d3f-934131b101af",
             "Value": {
                 "id": "f5bc5dc6-2fb9-45ce-967a-a0eff754f730",
@@ -156,6 +164,14 @@
                 "id": "24fb983d-d0c4-4474-b41c-87c82d49fc1b",
                 "resourcePath": "sprites\\s_skeleton_attack_one_damage\\s_skeleton_attack_one_damage.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "765608dc-ec47-44c8-8cf8-aaf0a695973c",
+            "Value": {
+                "id": "8284efe4-a8e1-426c-b065-645a4b29f3d2",
+                "resourcePath": "objects\\o_skeleton\\o_skeleton.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -234,7 +250,7 @@
             "Key": "c869e128-54b0-43e0-a80e-68e4390535c1",
             "Value": {
                 "id": "dea3a85e-a918-477c-928e-aa4eef7ca26f",
-                "resourcePath": "rooms\\room0\\room0.yy",
+                "resourcePath": "rooms\\r_graveyard\\r_graveyard.yy",
                 "resourceType": "GMRoom"
             }
         },
