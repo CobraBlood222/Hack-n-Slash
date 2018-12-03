@@ -1,9 +1,63 @@
-if keyboard_check(vk_right){
-	x += 4;
-	image_xscale= 1;
-}
 
-if keyboard_check(vk_left){
-	x -= 4;
-	image_xscale = -1;
+switch (state)
+{
+	case "move":
+		#region Move State
+		if keyboard_check(vk_right) and not place_meeting(x + 4, y, o_wall)
+		{
+			x += 4;
+			image_xscale= 1;
+			sprite_index = s_skeleton_run;
+			image_speed = 0.6;
+		}
+
+		if keyboard_check(vk_left) and not place_meeting(x - 4, y, o_wall)
+		{
+			x -= 4;
+			image_xscale = -1;
+			sprite_index = s_skeleton_run;
+			image_speed = 0.6;
+		}
+
+		if not keyboard_check(vk_right) and not keyboard_check(vk_left){
+			sprite_index = s_skeleton_idle;	
+			image_speed = 0.4;
+		}
+	
+		if keyboard_check_pressed(vk_space)
+		{
+			image_index = 0;
+			state = "roll";
+		}
+		
+		if keyboard_check_pressed(vk_lshift)
+		{
+			image_index = 0;
+			state = "attack one";
+		}
+		#endregion
+		break;
+	
+	case "roll":
+		#region Roll State
+		sprite_index = s_skeleton_roll;
+		image_speed = 0.6;
+	
+		if image_xscale == 1 and not place_meeting(x + 6, y, o_wall)
+		{
+			x += 6;
+		}
+	
+		if image_xscale == -1 and not place_meeting(x - 6, y, o_wall)
+		{
+			x -= 6;
+		}
+		#endregion
+		break;
+	case "attack one":
+		#region Attack One State
+			sprite_index = s_skeleton_attack_one;
+			image_speed = 0.6;
+		#endregion
+		break;
 }

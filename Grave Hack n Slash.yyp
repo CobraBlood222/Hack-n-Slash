@@ -34,7 +34,7 @@
             "Key": "01aafdc9-5978-4e23-901b-085ab4eb9013",
             "Value": {
                 "id": "b208350d-58c7-431c-aa5e-3b56cfba0ea4",
-                "resourcePath": "sprites\\s_skeleton_rol\\s_skeleton_rol.yy",
+                "resourcePath": "sprites\\s_skeleton_roll\\s_skeleton_roll.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -167,6 +167,14 @@
             }
         },
         {
+            "Key": "73cd659b-8817-4827-b6e6-af10481ef3f8",
+            "Value": {
+                "id": "be8432ce-adf6-4769-82e6-6054c6624dc3",
+                "resourcePath": "sprites\\s_wall\\s_wall.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "765608dc-ec47-44c8-8cf8-aaf0a695973c",
             "Value": {
                 "id": "8284efe4-a8e1-426c-b065-645a4b29f3d2",
@@ -188,6 +196,14 @@
                 "id": "893a06d8-9c3c-4904-8788-78bd7169a722",
                 "resourcePath": "sprites\\s_skeleton_attack_three\\s_skeleton_attack_three.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "812798b0-e837-4aed-accd-430068fa75ce",
+            "Value": {
+                "id": "dcff1bcf-c4c5-4f12-b7c9-b14a44b9eb7a",
+                "resourcePath": "objects\\o_wall\\o_wall.yy",
+                "resourceType": "GMObject"
             }
         },
         {
