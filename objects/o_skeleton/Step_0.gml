@@ -3,36 +3,34 @@ switch (state)
 {
 	case "move":
 		#region Move State
-		if keyboard_check(vk_right) and not place_meeting(x + 4, y, o_wall)
+		if input.right
 		{
-			x += 4;
+			move_and_collide(run_speed, 0);
 			image_xscale= 1;
 			sprite_index = s_skeleton_run;
 			image_speed = 0.6;
 		}
 
-		if keyboard_check(vk_left) and not place_meeting(x - 4, y, o_wall)
+		if input.left and not place_meeting(x - 4, y, o_wall)
 		{
-			x -= 4;
+			move_and_collide(-run_speed, 0);
 			image_xscale = -1;
 			sprite_index = s_skeleton_run;
 			image_speed = 0.6;
 		}
 
-		if not keyboard_check(vk_right) and not keyboard_check(vk_left){
+		if not input.right and not input.left{
 			sprite_index = s_skeleton_idle;	
 			image_speed = 0.4;
 		}
 	
-		if keyboard_check_pressed(vk_space)
+		if input.roll
 		{
-			image_index = 0;
 			state = "roll";
 		}
 		
-		if keyboard_check_pressed(vk_lshift)
+		if input.attack
 		{
-			image_index = 0;
 			state = "attack one";
 		}
 		#endregion
@@ -40,24 +38,45 @@ switch (state)
 	
 	case "roll":
 		#region Roll State
-		sprite_index = s_skeleton_roll;
-		image_speed = 0.6;
+		set_state_sprite(s_skeleton_roll, 0.7, 0);
 	
-		if image_xscale == 1 and not place_meeting(x + 6, y, o_wall)
+		if image_xscale == 1
 		{
-			x += 6;
+			move_and_collide(roll_speed, 0);
 		}
 	
-		if image_xscale == -1 and not place_meeting(x - 6, y, o_wall)
+		if image_xscale == -1
 		{
-			x -= 6;
+			move_and_collide(-roll_speed, 0);
 		}
 		#endregion
 		break;
+	
 	case "attack one":
 		#region Attack One State
-			sprite_index = s_skeleton_attack_one;
-			image_speed = 0.6;
+		set_state_sprite(s_skeleton_attack_one, 0.7, 0);
+			
+		if input.attack and animation_hit_frame_range(2, 4)
+		{
+			state = "attack two";
+		}
+		#endregion
+		break;
+	
+	case "attack two":
+		#region Attack Two State
+		set_state_sprite(s_skeleton_attack_two, 0.7, 0);
+			
+		if input.attack and animation_hit_frame_range(2, 4)
+		{
+			state = "attack three";
+		}
+		#endregion
+		break;
+		
+	case "attack three":
+		#region Attack Three State
+		set_state_sprite(s_skeleton_attack_three, 0.7, 0);
 		#endregion
 		break;
 }
